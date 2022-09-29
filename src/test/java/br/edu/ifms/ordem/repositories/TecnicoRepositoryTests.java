@@ -53,6 +53,30 @@ public class TecnicoRepositoryTests {
 	
 	
 	
+	@Test
+	public void  deveriaRetornarUmOptionalQuandoOidExistir() {
+		Tecnico tecnico = Factory.novoTecnico();
+		tecnico.setId(idExistente);
+		
+		
+     	tecnico  =	repository.save(tecnico);
+     	
+        
+        
+        
+    //	Tecnico tecnico = Factory.novoTecnico();
+    //	tecnico.setId(idExistente);
+		//Assert
+		Optional<Tecnico> resultado; 
+    	resultado = repository.findById(idExistente);
+
+	
+	//	Assertions.assertTrue(resultado.isPresent());
+     	Assertions.assertNotNull(tecnico.getId());
+	}
+	
+	
+	
 	
 	
 	/**
@@ -74,7 +98,12 @@ public class TecnicoRepositoryTests {
 	}
 
 	
+//	retornar um Optional<Tecnico> não vazio quando o id existir
+//	retornar um Optional<Tecnico> vazio quando o id não existir
+	
 
+	
+	
 	/**
 	 * DELETE
 	 * deveria LANCAR EXCECAO [quando O ID NAO EXISTIR]
