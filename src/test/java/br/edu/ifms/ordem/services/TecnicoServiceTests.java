@@ -1,5 +1,6 @@
 package br.edu.ifms.ordem.services;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -22,17 +23,33 @@ public class TecnicoServiceTests {
 	
 	
 	
+	private Long idExistente;
+	private Long idInexistente;
+	
+	
+	@BeforeEach
+	void setUp() throws Exception{
+		idExistente = 1L;
+		idInexistente = 100L;
+		
+	}
+	
+	
+	
 	@Test
 	private void deleteDeveriaExcluirRegistroQuandoIdExistir() {
-		 Long idExistente = 1L;
+		
+		
 		 service.delete(idExistente);
+		 
+		 
+		 
+		 
 		 
 
 	}
 		
-		
 
-	
 	
 	
 	
